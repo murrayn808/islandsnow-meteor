@@ -17,6 +17,9 @@ import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
+import IslandSnow from '../pages/IslandSnow';
+import TopMenu from '../components/TopMenu';
+import FooterMenu from '../components/FooterMenu';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -29,9 +32,9 @@ const App = () => {
   return (
     <Router>
       <div className="d-flex flex-column min-vh-100">
-        <NavBar />
+        <TopMenu/>
         <Routes>
-          <Route exact path="/" element={<Landing />} />
+          <Route exact path="/" element={<IslandSnow />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
@@ -43,7 +46,7 @@ const App = () => {
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer />
+       <FooterMenu/>
       </div>
     </Router>
   );
